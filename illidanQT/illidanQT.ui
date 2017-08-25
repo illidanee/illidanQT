@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>illidanQTClass</class>
+ <widget class="QWidget" name="illidanQTClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>512</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>illidanQT</string>
+  </property>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="illidanQT.qrc">
+     <normaloff>:/Sys/Resources/SignOut.png</normaloff>:/Sys/Resources/SignOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="illidanQT.qrc">
+     <normaloff>:/Sys/Resources/Settings.png</normaloff>:/Sys/Resources/Settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </action>
+  <action name="actionTools">
+   <property name="icon">
+    <iconset resource="illidanQT.qrc">
+     <normaloff>:/Sys/Resources/Tools.png</normaloff>:/Sys/Resources/Tools.png</iconset>
+   </property>
+   <property name="text">
+    <string>工具</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="illidanQT.qrc"/>
+ </resources>
+ <connections/>
+</ui>
