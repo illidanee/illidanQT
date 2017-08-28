@@ -3,6 +3,7 @@
         <file>Resources/1024X512.png</file>
         <file>Resources/2048X1024.png</file>
         <file>illidanQT.ico</file>
+        <file>Resources/BG.png</file>
     </qresource>
     <qresource prefix="/Sys">
         <file>Resources/Settings.png</file>

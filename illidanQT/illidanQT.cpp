@@ -10,17 +10,37 @@ illidanQT::illidanQT(QWidget *parent)
 	//初始化
 	m_RightButtonDown = false;
 
+	//--------------------------------------------------------------------------------
+	//--		绘制普通图片背景
+
+	////加载背景图片
+	//m_BG.load(":/illidanQT/Resources/2048X1024.png");
+
+	////设置窗口无边框
+	//setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
+
+	////设置窗口大小 - 按照窗口宽度保持 W / H = 2
+	//QDesktopWidget *deskWgt = QApplication::desktop();
+	//int deskWidth = deskWgt->availableGeometry().width();
+	//int deskHeigh = deskWgt->availableGeometry().height();
+	//setFixedSize(QSize(deskWidth * 4 / 5, deskWidth * 2 / 5));
+
+	//--------------------------------------------------------------------------------
+	//--		绘制透明图片背景
+
 	//加载背景图片
-	m_BG.load(":/illidanQT/Resources/2048X1024.png");
+	bool res = m_BG.load(":/illidanQT/Resources/BG.png");
 
 	//设置窗口无边框
 	setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
 
-	//设置窗口大小 - 按照窗口宽度保持 W / H = 2
-	QDesktopWidget *deskWgt = QApplication::desktop();
-	int deskWidth = deskWgt->availableGeometry().width();
-	int deskHeigh = deskWgt->availableGeometry().height();
-	setFixedSize(QSize(deskWidth * 4 / 5, deskWidth * 2 / 5));
+	//设置窗口属性透明
+	setAttribute(Qt::WA_TranslucentBackground);
+
+	//设置窗口大小
+	resize(m_BG.size());
+
+	//--------------------------------------------------------------------------------
 
 	//设置系统托盘
 	m_SystemTray.setToolTip("CopyRight by : illidan.org");
@@ -53,8 +73,13 @@ void illidanQT::paintEvent(QPaintEvent *event)
 
 	//绘制背景图片
 	QPainter painter(this);
-	QRect rect = this->rect();
-	painter.drawPixmap(rect, m_BG);
+
+	//--------------------------------------------------------------------------------
+	//QRect rect = this->rect();
+	//painter.drawPixmap(rect, m_BG);
+	//--------------------------------------------------------------------------------
+	painter.drawPixmap(0, 0, m_BG);
+	//--------------------------------------------------------------------------------
 }
 
 void illidanQT::mousePressEvent(QMouseEvent *event)
