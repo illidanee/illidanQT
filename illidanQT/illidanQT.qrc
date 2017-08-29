@@ -10,4 +10,8 @@
         <file>Resources/SignOut.png</file>
         <file>Resources/Tools.png</file>
     </qresource>
+    <qresource prefix="/Menu">
+        <file>Resources/BTN1.png</file>
+        <file>Resources/BTN2.png</file>
+    </qresource>
 </RCC>

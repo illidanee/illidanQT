@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_illidanQT_t {
-    QByteArrayData data[7];
-    char stringdata0[79];
+    QByteArrayData data[10];
+    char stringdata0[109];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,12 +35,15 @@ QT_MOC_LITERAL(2, 17, 0), // ""
 QT_MOC_LITERAL(3, 18, 7), // "checked"
 QT_MOC_LITERAL(4, 26, 11), // "OnActivated"
 QT_MOC_LITERAL(5, 38, 33), // "QSystemTrayIcon::ActivationRe..."
-QT_MOC_LITERAL(6, 72, 6) // "reason"
+QT_MOC_LITERAL(6, 72, 6), // "reason"
+QT_MOC_LITERAL(7, 79, 10), // "OnMinimize"
+QT_MOC_LITERAL(8, 90, 12), // "QMouseEvent*"
+QT_MOC_LITERAL(9, 103, 5) // "event"
 
     },
     "illidanQT\0OnExit\0\0checked\0OnActivated\0"
     "QSystemTrayIcon::ActivationReason\0"
-    "reason"
+    "reason\0OnMinimize\0QMouseEvent*\0event"
 };
 #undef QT_MOC_LITERAL
 
@@ -50,7 +53,7 @@ static const uint qt_meta_data_illidanQT[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -58,12 +61,14 @@ static const uint qt_meta_data_illidanQT[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x08 /* Private */,
-       4,    1,   27,    2, 0x08 /* Private */,
+       1,    1,   29,    2, 0x08 /* Private */,
+       4,    1,   32,    2, 0x08 /* Private */,
+       7,    1,   35,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Int, QMetaType::Bool,    3,
     QMetaType::Int, 0x80000000 | 5,    6,
+    QMetaType::Int, 0x80000000 | 8,    9,
 
        0        // eod
 };
@@ -77,6 +82,8 @@ void illidanQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 0: { int _r = _t->OnExit((*reinterpret_cast< bool(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         case 1: { int _r = _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 2: { int _r = _t->OnMinimize((*reinterpret_cast< QMouseEvent*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         default: ;
         }
@@ -108,13 +115,13 @@ int illidanQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 3;
     }
     return _id;
 }

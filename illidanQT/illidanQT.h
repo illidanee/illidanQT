@@ -28,6 +28,7 @@ private:
 private slots:
 	int OnExit(bool checked);
 	int OnActivated(QSystemTrayIcon::ActivationReason reason);
+	int OnMinimize(QMouseEvent* event);
 
 private:
 	Ui::illidanQTClass ui;

@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QWidget>
+#include <xbutton.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -24,12 +25,13 @@ public:
     QAction *actionExit;
     QAction *actionSettings;
     QAction *actionTools;
+    XButton *BtnMinimize;
 
     void setupUi(QWidget *illidanQTClass)
     {
         if (illidanQTClass->objectName().isEmpty())
             illidanQTClass->setObjectName(QStringLiteral("illidanQTClass"));
-        illidanQTClass->resize(1024, 512);
+        illidanQTClass->resize(483, 674);
         actionExit = new QAction(illidanQTClass);
         actionExit->setObjectName(QStringLiteral("actionExit"));
         QIcon icon;
@@ -45,6 +47,9 @@ public:
         QIcon icon2;
         icon2.addFile(QStringLiteral(":/Sys/Resources/Tools.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionTools->setIcon(icon2);
+        BtnMinimize = new XButton(illidanQTClass);
+        BtnMinimize->setObjectName(QStringLiteral("BtnMinimize"));
+        BtnMinimize->setGeometry(QRect(417, 3, 64, 64));
 
         retranslateUi(illidanQTClass);
 

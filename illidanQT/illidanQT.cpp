@@ -59,6 +59,8 @@ illidanQT::illidanQT(QWidget *parent)
 
 	//设置其他消息
 	connect(ui.actionExit, SIGNAL(triggered(bool)), this, SLOT(OnExit(bool)));
+
+	connect(ui.BtnMinimize, SIGNAL(LiftButtonUp(QMouseEvent*)), this, SLOT(OnMinimize(QMouseEvent*)));
 }
 
 void illidanQT::closeEvent(QCloseEvent *event)
@@ -132,5 +134,12 @@ int illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
 		showNormal();
 	}
 
+	return 1;
+}
+
+int illidanQT::OnMinimize(QMouseEvent* event)
+{
+	hide();
+	
 	return 1;
 }

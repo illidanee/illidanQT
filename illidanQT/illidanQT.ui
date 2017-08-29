@@ -6,13 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1024</width>
-    <height>512</height>
+    <width>483</width>
+    <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>illidanQT</string>
   </property>
+  <widget class="XButton" name="BtnMinimize" native="true">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>3</y>
+     <width>64</width>
+     <height>64</height>
+    </rect>
+   </property>
+  </widget>
   <action name="actionExit">
    <property name="icon">
     <iconset resource="illidanQT.qrc">
@@ -42,6 +52,14 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>XButton</class>
+   <extends>QWidget</extends>
+   <header location="global">xbutton.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="illidanQT.qrc"/>
  </resources>
