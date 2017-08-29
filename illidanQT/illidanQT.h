@@ -26,9 +26,9 @@ private:
 	virtual void mouseMoveEvent(QMouseEvent *event);
 
 private slots:
-	int OnExit(bool checked);
-	int OnActivated(QSystemTrayIcon::ActivationReason reason);
-	int OnMinimize(QMouseEvent* event);
+	void OnExit(bool checked);
+	void OnActivated(QSystemTrayIcon::ActivationReason reason);
+	void OnMinimize(QMouseEvent* event);
 
 private:
 	Ui::illidanQTClass ui;

@@ -66,9 +66,9 @@ static const uint qt_meta_data_illidanQT[] = {
        7,    1,   35,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Int, QMetaType::Bool,    3,
-    QMetaType::Int, 0x80000000 | 5,    6,
-    QMetaType::Int, 0x80000000 | 8,    9,
+    QMetaType::Void, QMetaType::Bool,    3,
+    QMetaType::Void, 0x80000000 | 5,    6,
+    QMetaType::Void, 0x80000000 | 8,    9,
 
        0        // eod
 };
@@ -79,12 +79,9 @@ void illidanQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         illidanQT *_t = static_cast<illidanQT *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: { int _r = _t->OnExit((*reinterpret_cast< bool(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 1: { int _r = _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 2: { int _r = _t->OnMinimize((*reinterpret_cast< QMouseEvent*(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+        case 0: _t->OnExit((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 1: _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;
+        case 2: _t->OnMinimize((*reinterpret_cast< QMouseEvent*(*)>(_a[1]))); break;
         default: ;
         }
     }

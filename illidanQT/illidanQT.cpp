@@ -120,26 +120,20 @@ void illidanQT::mouseMoveEvent(QMouseEvent *event)
 	}
 }
 
-int illidanQT::OnExit(bool checked)
+void illidanQT::OnExit(bool checked)
 {
 	QApplication::exit();
-
-	return 1;
 }
 
-int illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
+void illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
 {
 	if (reason == QSystemTrayIcon::DoubleClick)
 	{
 		showNormal();
 	}
-
-	return 1;
 }
 
-int illidanQT::OnMinimize(QMouseEvent* event)
+void illidanQT::OnMinimize(QMouseEvent* event)
 {
 	hide();
-	
-	return 1;
 }
