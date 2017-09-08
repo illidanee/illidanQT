@@ -3,14 +3,16 @@
         <file>illidanQT.ico</file>
     </qresource>
     <qresource prefix="/Sys">
-        <file>Resources/Power.png</file>
         <file>Resources/Settings.png</file>
-        <file>Resources/Debug.png</file>
         <file>Resources/Close.png</file>
         <file>Resources/Min.png</file>
+        <file>Resources/Admin.png</file>
+        <file>Resources/More.png</file>
     </qresource>
     <qresource prefix="/LoginPage">
-        <file>Resources/pass-lock.png</file>
-        <file>Resources/user.png</file>
+        <file>Resources/Lock.png</file>
+        <file>Resources/Mail.png</file>
+        <file>Resources/BtnBG.png</file>
+        <file>Resources/LineEditBG.png</file>
     </qresource>
 </RCC>

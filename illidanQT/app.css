@@ -1,5 +1,25 @@
 ﻿QWidget 
 {
-	color : #222222;
+	color : #520680;
 	background : #87CEEB;
+}
+
+#LoginPageLabel
+{
+	background-image: url(:/LoginPage/Resources/LineEditBG.png);
+}
+
+#LoginPageEmail
+{
+	background-image: url(:/LoginPage/Resources/LineEditBG.png);
+}
+
+#LoginPagePassword
+{
+	background-image: url(:/LoginPage/Resources/LineEditBG.png);
+}
+
+#LoginPageBtnLogin
+{
+	background-image: url(:/LoginPage/Resources/BtnBG.png);
 }

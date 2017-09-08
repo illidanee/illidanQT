@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -25,59 +24,43 @@ QT_BEGIN_NAMESPACE
 class Ui_XPasswordLineEdit
 {
 public:
-    QHBoxLayout *horizontalLayout_2;
-    QGroupBox *groupBoxBG;
-    QHBoxLayout *horizontalLayout_3;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *EditPassword;
-    QLabel *label;
+    QLabel *LoginPageLabel;
+    QLineEdit *LoginPagePassword;
 
     void setupUi(QWidget *XPasswordLineEdit)
     {
         if (XPasswordLineEdit->objectName().isEmpty())
             XPasswordLineEdit->setObjectName(QStringLiteral("XPasswordLineEdit"));
-        XPasswordLineEdit->resize(300, 50);
-        XPasswordLineEdit->setMinimumSize(QSize(300, 50));
-        XPasswordLineEdit->setMaximumSize(QSize(300, 50));
-        horizontalLayout_2 = new QHBoxLayout(XPasswordLineEdit);
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBoxBG = new QGroupBox(XPasswordLineEdit);
-        groupBoxBG->setObjectName(QStringLiteral("groupBoxBG"));
-        horizontalLayout_3 = new QHBoxLayout(groupBoxBG);
-        horizontalLayout_3->setSpacing(0);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(2, 2, 2, 2);
-        horizontalLayout = new QHBoxLayout();
+        XPasswordLineEdit->resize(364, 68);
+        XPasswordLineEdit->setMinimumSize(QSize(364, 68));
+        XPasswordLineEdit->setMaximumSize(QSize(364, 68));
+        horizontalLayout = new QHBoxLayout(XPasswordLineEdit);
         horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        EditPassword = new QLineEdit(groupBoxBG);
-        EditPassword->setObjectName(QStringLiteral("EditPassword"));
-        EditPassword->setMinimumSize(QSize(200, 40));
-        EditPassword->setMaximumSize(QSize(300, 40));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        LoginPageLabel = new QLabel(XPasswordLineEdit);
+        LoginPageLabel->setObjectName(QStringLiteral("LoginPageLabel"));
+        LoginPageLabel->setMinimumSize(QSize(64, 64));
+        LoginPageLabel->setMaximumSize(QSize(64, 64));
+        LoginPageLabel->setPixmap(QPixmap(QString::fromUtf8(":/LoginPage/Resources/Lock.png")));
+        LoginPageLabel->setAlignment(Qt::AlignCenter);
+        LoginPageLabel->setMargin(0);
+
+        horizontalLayout->addWidget(LoginPageLabel);
+
+        LoginPagePassword = new QLineEdit(XPasswordLineEdit);
+        LoginPagePassword->setObjectName(QStringLiteral("LoginPagePassword"));
+        LoginPagePassword->setMinimumSize(QSize(300, 64));
+        LoginPagePassword->setMaximumSize(QSize(300, 64));
         QFont font;
         font.setPointSize(16);
-        EditPassword->setFont(font);
-        EditPassword->setFrame(false);
-        EditPassword->setEchoMode(QLineEdit::Password);
+        LoginPagePassword->setFont(font);
+        LoginPagePassword->setFrame(false);
+        LoginPagePassword->setEchoMode(QLineEdit::Password);
 
-        horizontalLayout->addWidget(EditPassword);
-
-        label = new QLabel(groupBoxBG);
-        label->setObjectName(QStringLiteral("label"));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/LoginPage/Resources/pass-lock.png")));
-        label->setMargin(10);
-
-        horizontalLayout->addWidget(label);
-
-
-        horizontalLayout_3->addLayout(horizontalLayout);
-
-
-        horizontalLayout_2->addWidget(groupBoxBG);
+        horizontalLayout->addWidget(LoginPagePassword);
 
 
         retranslateUi(XPasswordLineEdit);
@@ -88,9 +71,8 @@ public:
     void retranslateUi(QWidget *XPasswordLineEdit)
     {
         XPasswordLineEdit->setWindowTitle(QApplication::translate("XPasswordLineEdit", "XPasswordLineEdit", 0));
-        EditPassword->setInputMask(QString());
-        EditPassword->setPlaceholderText(QApplication::translate("XPasswordLineEdit", "\345\257\206\347\240\201", 0));
-        label->setText(QString());
+        LoginPageLabel->setText(QString());
+        LoginPagePassword->setPlaceholderText(QApplication::translate("XPasswordLineEdit", "******", 0));
     } // retranslateUi
 
 };

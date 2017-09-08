@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -25,58 +24,44 @@ QT_BEGIN_NAMESPACE
 class Ui_XUserNameLineEdit
 {
 public:
-    QHBoxLayout *horizontalLayout_2;
-    QGroupBox *groupBoxBG;
-    QHBoxLayout *horizontalLayout_3;
     QHBoxLayout *horizontalLayout;
-    QLineEdit *EditUserName;
-    QLabel *label;
+    QLabel *LoginPageLabel;
+    QLineEdit *LoginPageEmail;
 
     void setupUi(QWidget *XUserNameLineEdit)
     {
         if (XUserNameLineEdit->objectName().isEmpty())
             XUserNameLineEdit->setObjectName(QStringLiteral("XUserNameLineEdit"));
-        XUserNameLineEdit->resize(300, 50);
-        XUserNameLineEdit->setMinimumSize(QSize(300, 50));
-        XUserNameLineEdit->setMaximumSize(QSize(300, 50));
-        horizontalLayout_2 = new QHBoxLayout(XUserNameLineEdit);
-        horizontalLayout_2->setSpacing(0);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBoxBG = new QGroupBox(XUserNameLineEdit);
-        groupBoxBG->setObjectName(QStringLiteral("groupBoxBG"));
-        horizontalLayout_3 = new QHBoxLayout(groupBoxBG);
-        horizontalLayout_3->setSpacing(0);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(2, 2, 2, 2);
-        horizontalLayout = new QHBoxLayout();
+        XUserNameLineEdit->resize(364, 68);
+        XUserNameLineEdit->setMinimumSize(QSize(364, 68));
+        XUserNameLineEdit->setMaximumSize(QSize(364, 68));
+        XUserNameLineEdit->setStyleSheet(QStringLiteral(""));
+        horizontalLayout = new QHBoxLayout(XUserNameLineEdit);
         horizontalLayout->setSpacing(0);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        EditUserName = new QLineEdit(groupBoxBG);
-        EditUserName->setObjectName(QStringLiteral("EditUserName"));
-        EditUserName->setMinimumSize(QSize(200, 40));
-        EditUserName->setMaximumSize(QSize(300, 40));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        LoginPageLabel = new QLabel(XUserNameLineEdit);
+        LoginPageLabel->setObjectName(QStringLiteral("LoginPageLabel"));
+        LoginPageLabel->setMinimumSize(QSize(64, 64));
+        LoginPageLabel->setMaximumSize(QSize(64, 64));
+        LoginPageLabel->setStyleSheet(QStringLiteral(""));
+        LoginPageLabel->setPixmap(QPixmap(QString::fromUtf8(":/LoginPage/Resources/Mail.png")));
+        LoginPageLabel->setAlignment(Qt::AlignCenter);
+        LoginPageLabel->setMargin(0);
+
+        horizontalLayout->addWidget(LoginPageLabel);
+
+        LoginPageEmail = new QLineEdit(XUserNameLineEdit);
+        LoginPageEmail->setObjectName(QStringLiteral("LoginPageEmail"));
+        LoginPageEmail->setMinimumSize(QSize(300, 64));
+        LoginPageEmail->setMaximumSize(QSize(300, 64));
         QFont font;
         font.setPointSize(16);
-        EditUserName->setFont(font);
-        EditUserName->setFrame(false);
+        LoginPageEmail->setFont(font);
+        LoginPageEmail->setFrame(false);
 
-        horizontalLayout->addWidget(EditUserName);
-
-        label = new QLabel(groupBoxBG);
-        label->setObjectName(QStringLiteral("label"));
-        label->setPixmap(QPixmap(QString::fromUtf8(":/LoginPage/Resources/user.png")));
-        label->setMargin(10);
-
-        horizontalLayout->addWidget(label);
-
-
-        horizontalLayout_3->addLayout(horizontalLayout);
-
-
-        horizontalLayout_2->addWidget(groupBoxBG);
+        horizontalLayout->addWidget(LoginPageEmail);
 
 
         retranslateUi(XUserNameLineEdit);
@@ -87,8 +72,8 @@ public:
     void retranslateUi(QWidget *XUserNameLineEdit)
     {
         XUserNameLineEdit->setWindowTitle(QApplication::translate("XUserNameLineEdit", "XUserNameLineEdit", 0));
-        EditUserName->setPlaceholderText(QApplication::translate("XUserNameLineEdit", "\347\224\250\346\210\267\345\220\215", 0));
-        label->setText(QString());
+        LoginPageLabel->setText(QString());
+        LoginPageEmail->setPlaceholderText(QApplication::translate("XUserNameLineEdit", "Email Address", 0));
     } // retranslateUi
 
 };

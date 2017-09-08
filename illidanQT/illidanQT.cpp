@@ -24,15 +24,16 @@ illidanQT::illidanQT(QWidget *parent)
 	m_SystemTray.setIcon(QIcon(":/illidanQT/illidanQT.ico"));
 
 	QMenu* menu = new QMenu();
-	menu->addAction(ui.actionDebug);
+	menu->addAction(ui.actionInfo);
+	menu->addAction(ui.actionTools);
 	menu->addAction(ui.actionSettings);
 	menu->addSeparator();
-	menu->addAction(ui.actionPower);
+	menu->addAction(ui.actionExit);
 	m_SystemTray.setContextMenu(menu);
 
 	m_SystemTray.show();
 
-	connect(ui.actionPower, SIGNAL(triggered()), this, SLOT(OnExit()));
+	connect(ui.actionExit, SIGNAL(triggered()), this, SLOT(OnExit()));
 	connect(&m_SystemTray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(OnActivated(QSystemTrayIcon::ActivationReason)));
 
 	//关联其他事件
