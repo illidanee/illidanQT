@@ -1,17 +1,12 @@
 <RCC>
     <qresource prefix="/illidanQT">
-        <file>Resources/1024X512.png</file>
-        <file>Resources/2048X1024.png</file>
         <file>illidanQT.ico</file>
-        <file>Resources/BG.png</file>
     </qresource>
     <qresource prefix="/Sys">
+        <file>Resources/Power.png</file>
         <file>Resources/Settings.png</file>
-        <file>Resources/SignOut.png</file>
-        <file>Resources/Tools.png</file>
-    </qresource>
-    <qresource prefix="/Menu">
-        <file>Resources/BTN1.png</file>
-        <file>Resources/BTN2.png</file>
+        <file>Resources/Debug.png</file>
+        <file>Resources/Close.png</file>
+        <file>Resources/Min.png</file>
     </qresource>
 </RCC>

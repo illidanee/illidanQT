@@ -10,57 +10,34 @@ illidanQT::illidanQT(QWidget *parent)
 	//初始化
 	m_RightButtonDown = false;
 
-	//--------------------------------------------------------------------------------
-	//--		绘制普通图片背景
-
-	////加载背景图片
-	//m_BG.load(":/illidanQT/Resources/2048X1024.png");
-
-	////设置窗口无边框
-	//setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
-
-	////设置窗口大小 - 按照窗口宽度保持 W / H = 2
-	//QDesktopWidget *deskWgt = QApplication::desktop();
-	//int deskWidth = deskWgt->availableGeometry().width();
-	//int deskHeigh = deskWgt->availableGeometry().height();
-	//setFixedSize(QSize(deskWidth * 4 / 5, deskWidth * 2 / 5));
-
-	//--------------------------------------------------------------------------------
-	//--		绘制透明图片背景
-
-	//加载背景图片
-	bool res = m_BG.load(":/illidanQT/Resources/BG.png");
-
 	//设置窗口无边框
 	setWindowFlags(Qt::Widget | Qt::FramelessWindowHint);
 
-	//设置窗口属性透明
-	setAttribute(Qt::WA_TranslucentBackground);
-
-	//设置窗口大小
-	resize(m_BG.size());
-
-	//--------------------------------------------------------------------------------
+	//设置窗口大小 - 按照窗口宽度保持 W / H = 2
+	QDesktopWidget *deskWgt = QApplication::desktop();
+	int deskWidth = deskWgt->availableGeometry().width();
+	int deskHeigh = deskWgt->availableGeometry().height();
+	setFixedSize(QSize(deskWidth * 4 / 5, deskWidth * 2 / 5));
 
 	//设置系统托盘
 	m_SystemTray.setToolTip("CopyRight by : illidan.org");
 	m_SystemTray.setIcon(QIcon(":/illidanQT/illidanQT.ico"));
 
 	QMenu* menu = new QMenu();
-	menu->addAction(ui.actionTools);
+	menu->addAction(ui.actionDebug);
 	menu->addAction(ui.actionSettings);
 	menu->addSeparator();
-	menu->addAction(ui.actionExit);
+	menu->addAction(ui.actionPower);
 	m_SystemTray.setContextMenu(menu);
 
 	m_SystemTray.show();
 
+	connect(ui.actionPower, SIGNAL(triggered()), this, SLOT(OnExit()));
 	connect(&m_SystemTray, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(OnActivated(QSystemTrayIcon::ActivationReason)));
 
-	//设置其他消息
-	connect(ui.actionExit, SIGNAL(triggered(bool)), this, SLOT(OnExit(bool)));
-
-	connect(ui.BtnMinimize, SIGNAL(LiftButtonUp(QMouseEvent*)), this, SLOT(OnMinimize(QMouseEvent*)));
+	//关联其他事件
+	connect(ui.BtnMin, SIGNAL(released()), this, SLOT(OnMin()));
+	connect(ui.BtnClose, SIGNAL(released()), this, SLOT(OnExit()));
 }
 
 void illidanQT::closeEvent(QCloseEvent *event)
@@ -72,16 +49,6 @@ void illidanQT::closeEvent(QCloseEvent *event)
 void illidanQT::paintEvent(QPaintEvent *event)
 {
 	QWidget::paintEvent(event);
-
-	//绘制背景图片
-	QPainter painter(this);
-
-	//--------------------------------------------------------------------------------
-	//QRect rect = this->rect();
-	//painter.drawPixmap(rect, m_BG);
-	//--------------------------------------------------------------------------------
-	painter.drawPixmap(0, 0, m_BG);
-	//--------------------------------------------------------------------------------
 }
 
 void illidanQT::mousePressEvent(QMouseEvent *event)
@@ -120,7 +87,7 @@ void illidanQT::mouseMoveEvent(QMouseEvent *event)
 	}
 }
 
-void illidanQT::OnExit(bool checked)
+void illidanQT::OnExit()
 {
 	QApplication::exit();
 }
@@ -133,7 +100,7 @@ void illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
 	}
 }
 
-void illidanQT::OnMinimize(QMouseEvent* event)
+void illidanQT::OnMin()
 {
 	hide();
 }

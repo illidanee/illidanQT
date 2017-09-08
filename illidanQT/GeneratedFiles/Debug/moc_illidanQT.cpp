@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_illidanQT_t {
-    QByteArrayData data[10];
-    char stringdata0[109];
+    QByteArrayData data[7];
+    char stringdata0[77];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -30,20 +30,17 @@ struct qt_meta_stringdata_illidanQT_t {
 static const qt_meta_stringdata_illidanQT_t qt_meta_stringdata_illidanQT = {
     {
 QT_MOC_LITERAL(0, 0, 9), // "illidanQT"
-QT_MOC_LITERAL(1, 10, 6), // "OnExit"
-QT_MOC_LITERAL(2, 17, 0), // ""
-QT_MOC_LITERAL(3, 18, 7), // "checked"
-QT_MOC_LITERAL(4, 26, 11), // "OnActivated"
-QT_MOC_LITERAL(5, 38, 33), // "QSystemTrayIcon::ActivationRe..."
-QT_MOC_LITERAL(6, 72, 6), // "reason"
-QT_MOC_LITERAL(7, 79, 10), // "OnMinimize"
-QT_MOC_LITERAL(8, 90, 12), // "QMouseEvent*"
-QT_MOC_LITERAL(9, 103, 5) // "event"
+QT_MOC_LITERAL(1, 10, 11), // "OnActivated"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 33), // "QSystemTrayIcon::ActivationRe..."
+QT_MOC_LITERAL(4, 57, 6), // "reason"
+QT_MOC_LITERAL(5, 64, 5), // "OnMin"
+QT_MOC_LITERAL(6, 70, 6) // "OnExit"
 
     },
-    "illidanQT\0OnExit\0\0checked\0OnActivated\0"
+    "illidanQT\0OnActivated\0\0"
     "QSystemTrayIcon::ActivationReason\0"
-    "reason\0OnMinimize\0QMouseEvent*\0event"
+    "reason\0OnMin\0OnExit"
 };
 #undef QT_MOC_LITERAL
 
@@ -62,13 +59,13 @@ static const uint qt_meta_data_illidanQT[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    1,   29,    2, 0x08 /* Private */,
-       4,    1,   32,    2, 0x08 /* Private */,
-       7,    1,   35,    2, 0x08 /* Private */,
+       5,    0,   32,    2, 0x08 /* Private */,
+       6,    0,   33,    2, 0x08 /* Private */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Bool,    3,
-    QMetaType::Void, 0x80000000 | 5,    6,
-    QMetaType::Void, 0x80000000 | 8,    9,
+    QMetaType::Void, 0x80000000 | 3,    4,
+    QMetaType::Void,
+    QMetaType::Void,
 
        0        // eod
 };
@@ -79,9 +76,9 @@ void illidanQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         illidanQT *_t = static_cast<illidanQT *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->OnExit((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 1: _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;
-        case 2: _t->OnMinimize((*reinterpret_cast< QMouseEvent*(*)>(_a[1]))); break;
+        case 0: _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;
+        case 1: _t->OnMin(); break;
+        case 2: _t->OnExit(); break;
         default: ;
         }
     }

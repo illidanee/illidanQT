@@ -26,15 +26,12 @@ private:
 	virtual void mouseMoveEvent(QMouseEvent *event);
 
 private slots:
-	void OnExit(bool checked);
 	void OnActivated(QSystemTrayIcon::ActivationReason reason);
-	void OnMinimize(QMouseEvent* event);
+	void OnMin();
+	void OnExit();
 
 private:
 	Ui::illidanQTClass ui;
-
-	//±³¾°
-	QPixmap m_BG;
 
 	//ÍÏ¶¯´°¿Ú
 	bool m_RightButtonDown;
