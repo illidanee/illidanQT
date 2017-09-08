@@ -15,6 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
@@ -38,6 +39,11 @@ public:
     QToolButton *BtnMin;
     QToolButton *BtnClose;
     QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_5;
+    QSpacerItem *horizontalSpacer_9;
+    QLabel *Name;
+    QSpacerItem *horizontalSpacer_8;
+    QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_2;
     XUserNameLineEdit *widget_3;
@@ -56,7 +62,7 @@ public:
     {
         if (illidanQTClass->objectName().isEmpty())
             illidanQTClass->setObjectName(QStringLiteral("illidanQTClass"));
-        illidanQTClass->resize(805, 710);
+        illidanQTClass->resize(1117, 919);
         actionExit = new QAction(illidanQTClass);
         actionExit->setObjectName(QStringLiteral("actionExit"));
         QIcon icon;
@@ -78,7 +84,7 @@ public:
         icon3.addFile(QStringLiteral(":/Sys/Resources/Admin.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionInfo->setIcon(icon3);
         verticalLayout = new QVBoxLayout(illidanQTClass);
-        verticalLayout->setSpacing(16);
+        verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         horizontalLayout = new QHBoxLayout();
@@ -113,9 +119,37 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        verticalSpacer = new QSpacerItem(20, 360, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 320, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
+
+        horizontalLayout_5 = new QHBoxLayout();
+        horizontalLayout_5->setSpacing(6);
+        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
+        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_9);
+
+        Name = new QLabel(illidanQTClass);
+        Name->setObjectName(QStringLiteral("Name"));
+        Name->setMinimumSize(QSize(235, 70));
+        Name->setMaximumSize(QSize(235, 70));
+        Name->setAutoFillBackground(true);
+        Name->setScaledContents(true);
+        Name->setAlignment(Qt::AlignCenter);
+
+        horizontalLayout_5->addWidget(Name);
+
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_5->addItem(horizontalSpacer_8);
+
+
+        verticalLayout->addLayout(horizontalLayout_5);
+
+        verticalSpacer_2 = new QSpacerItem(20, 144, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_2);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(16);
@@ -174,7 +208,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_4);
 
-        verticalSpacer_4 = new QSpacerItem(20, 169, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 220, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer_4);
 
@@ -193,6 +227,7 @@ public:
         actionInfo->setText(QApplication::translate("illidanQTClass", "\344\277\241\346\201\257", 0));
         BtnMin->setText(QString());
         BtnClose->setText(QString());
+        Name->setText(QString());
     } // retranslateUi
 
 };

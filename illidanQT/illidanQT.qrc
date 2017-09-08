@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/illidanQT">
         <file>illidanQT.ico</file>
+        <file>Resources/Name.png</file>
     </qresource>
     <qresource prefix="/Sys">
         <file>Resources/Settings.png</file>

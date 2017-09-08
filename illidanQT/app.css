@@ -4,6 +4,11 @@
 	background : #87CEEB;
 }
 
+#Name
+{
+	border-image: url(:/illidanQT/Resources/Name.png);
+}
+
 #LoginPageLabel
 {
 	background-image: url(:/LoginPage/Resources/LineEditBG.png);
