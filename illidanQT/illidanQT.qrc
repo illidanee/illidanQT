@@ -9,4 +9,8 @@
         <file>Resources/Close.png</file>
         <file>Resources/Min.png</file>
     </qresource>
+    <qresource prefix="/LoginPage">
+        <file>Resources/pass-lock.png</file>
+        <file>Resources/user.png</file>
+    </qresource>
 </RCC>

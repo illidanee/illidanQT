@@ -15,10 +15,13 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QToolButton>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "xpasswordlineedit.h"
+#include "xusernamelineedit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -34,6 +37,21 @@ public:
     QToolButton *BtnMin;
     QToolButton *BtnClose;
     QSpacerItem *verticalSpacer;
+    QHBoxLayout *horizontalLayout_2;
+    QSpacerItem *horizontalSpacer_2;
+    XUserNameLineEdit *widget_3;
+    QSpacerItem *horizontalSpacer_3;
+    QHBoxLayout *horizontalLayout_3;
+    QSpacerItem *horizontalSpacer_4;
+    XPasswordLineEdit *widget_4;
+    QSpacerItem *horizontalSpacer_5;
+    QHBoxLayout *horizontalLayout_4;
+    QSpacerItem *horizontalSpacer_6;
+    QPushButton *pushButton;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer_7;
+    QSpacerItem *verticalSpacer_4;
 
     void setupUi(QWidget *illidanQTClass)
     {
@@ -93,12 +111,88 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 360, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_2);
+
+        widget_3 = new XUserNameLineEdit(illidanQTClass);
+        widget_3->setObjectName(QStringLiteral("widget_3"));
+
+        horizontalLayout_2->addWidget(widget_3);
+
+        horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_2->addItem(horizontalSpacer_3);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
+
+        horizontalLayout_3 = new QHBoxLayout();
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalSpacer_4 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_4);
+
+        widget_4 = new XPasswordLineEdit(illidanQTClass);
+        widget_4->setObjectName(QStringLiteral("widget_4"));
+
+        horizontalLayout_3->addWidget(widget_4);
+
+        horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_3->addItem(horizontalSpacer_5);
+
+
+        verticalLayout->addLayout(horizontalLayout_3);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setSpacing(6);
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
+        horizontalSpacer_6 = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_6);
+
+        pushButton = new QPushButton(illidanQTClass);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setMinimumSize(QSize(100, 50));
+        pushButton->setAutoDefault(false);
+
+        horizontalLayout_4->addWidget(pushButton);
+
+        horizontalSpacer_8 = new QSpacerItem(60, 20, QSizePolicy::Fixed, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_8);
+
+        pushButton_2 = new QPushButton(illidanQTClass);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setMinimumSize(QSize(100, 50));
+
+        horizontalLayout_4->addWidget(pushButton_2);
+
+        horizontalSpacer_7 = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+
+        horizontalLayout_4->addItem(horizontalSpacer_7);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
+
+        verticalSpacer_4 = new QSpacerItem(20, 169, QSizePolicy::Minimum, QSizePolicy::Expanding);
+
+        verticalLayout->addItem(verticalSpacer_4);
+
 
         retranslateUi(illidanQTClass);
+
+        pushButton->setDefault(true);
+
 
         QMetaObject::connectSlotsByName(illidanQTClass);
     } // setupUi
@@ -111,6 +205,9 @@ public:
         actionDebug->setText(QApplication::translate("illidanQTClass", "\345\267\245\345\205\267", 0));
         BtnMin->setText(QString());
         BtnClose->setText(QString());
+        pushButton->setText(QApplication::translate("illidanQTClass", "Login", 0));
+        pushButton->setShortcut(QApplication::translate("illidanQTClass", "Return", 0));
+        pushButton_2->setText(QApplication::translate("illidanQTClass", "Cancel", 0));
     } // retranslateUi
 
 };
