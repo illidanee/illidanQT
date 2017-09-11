@@ -44,6 +44,24 @@
     <Filter Include="Header Files\Login">
       <UniqueIdentifier>{852321d7-2efa-4d2c-b928-dad008b9181f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\OpenGL">
+      <UniqueIdentifier>{e5934321-f398-4ae6-9afc-141b350d0ee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL\Model">
+      <UniqueIdentifier>{266d088a-29b2-49e6-8eda-e8b2e32b8ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL\Comm">
+      <UniqueIdentifier>{521d91bc-d18f-4dbc-8f09-f5500cabbbe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL">
+      <UniqueIdentifier>{d5bdec1a-2a19-45cd-99f5-6f08b578efa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL\Model">
+      <UniqueIdentifier>{f93651c1-445a-4990-a7a3-b6a177930f5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL\Comm">
+      <UniqueIdentifier>{40d1495e-c5c8-4b59-a419-0c7dea7ddcde}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -97,6 +115,33 @@
     <ClCompile Include="GeneratedFiles\Release\moc_XLogin.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="Src\OpenGL\XOpenGLWindow.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_XOpenGLWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_XOpenGLWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Comm\Comm.cpp">
+      <Filter>Source Files\OpenGL\Comm</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\Camera.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\Render.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\Skybox.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\Tools.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Manager.cpp">
+      <Filter>Source Files\OpenGL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="illidanQT.ui">
@@ -132,6 +177,9 @@
     <CustomBuild Include="XLogin.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="Src\OpenGL\XOpenGLWindow.h">
+      <Filter>Header Files\OpenGL</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_illidanQT.h">
@@ -148,6 +196,24 @@
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_XMainWindow.h">
       <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\Camera.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\Render.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\Skybox.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\Tools.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Comm\Comm.h">
+      <Filter>Header Files\OpenGL\Comm</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Manager.h">
+      <Filter>Header Files\OpenGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
