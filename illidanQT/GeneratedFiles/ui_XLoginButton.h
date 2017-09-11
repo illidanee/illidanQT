@@ -48,7 +48,7 @@ public:
         font.setBold(true);
         font.setWeight(75);
         LoginPageBtnLogin->setFont(font);
-        LoginPageBtnLogin->setAutoDefault(true);
+        LoginPageBtnLogin->setAutoDefault(false);
         LoginPageBtnLogin->setFlat(true);
 
         horizontalLayout->addWidget(LoginPageBtnLogin);
@@ -66,6 +66,7 @@ public:
     {
         XLoginButton->setWindowTitle(QApplication::translate("XLoginButton", "XLoginButton", 0));
         LoginPageBtnLogin->setText(QApplication::translate("XLoginButton", "Lign In", 0));
+        LoginPageBtnLogin->setShortcut(QApplication::translate("XLoginButton", "Return", 0));
     } // retranslateUi
 
 };

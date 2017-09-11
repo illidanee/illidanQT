@@ -66,8 +66,11 @@
      <property name="text">
       <string>Lign In</string>
      </property>
+     <property name="shortcut">
+      <string>Return</string>
+     </property>
      <property name="autoDefault">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="default">
       <bool>false</bool>
