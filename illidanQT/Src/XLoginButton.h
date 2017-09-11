@@ -11,6 +11,12 @@ public:
 	XLoginButton(QWidget *parent = Q_NULLPTR);
 	~XLoginButton();
 
+signals:
+	void released();
+
+private slots:
+	void OnBtnRelease();
+
 private:
 	Ui::XLoginButton ui;
 };

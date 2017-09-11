@@ -48,12 +48,16 @@ public:
         font.setBold(true);
         font.setWeight(75);
         LoginPageBtnLogin->setFont(font);
+        LoginPageBtnLogin->setAutoDefault(true);
         LoginPageBtnLogin->setFlat(true);
 
         horizontalLayout->addWidget(LoginPageBtnLogin);
 
 
         retranslateUi(XLoginButton);
+
+        LoginPageBtnLogin->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(XLoginButton);
     } // setupUi

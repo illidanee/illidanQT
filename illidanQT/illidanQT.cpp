@@ -39,6 +39,10 @@ illidanQT::illidanQT(QWidget *parent)
 	//关联其他事件
 	connect(ui.BtnMin, SIGNAL(released()), this, SLOT(OnMin()));
 	connect(ui.BtnClose, SIGNAL(released()), this, SLOT(OnExit()));
+
+	//登陆事件
+	connect(ui.PasswordWidget, SIGNAL(returnPressed()), this, SLOT(OnLogin()));
+	connect(ui.LoginButtonWdiget, SIGNAL(released()), this, SLOT(OnLogin()));
 }
 
 void illidanQT::closeEvent(QCloseEvent *event)
@@ -104,4 +108,9 @@ void illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
 void illidanQT::OnMin()
 {
 	hide();
+}
+
+void illidanQT::OnLogin()
+{
+	qDebug() << "OnLogin......";
 }

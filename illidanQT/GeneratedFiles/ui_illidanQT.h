@@ -46,15 +46,15 @@ public:
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer_2;
-    XUserNameLineEdit *widget_3;
+    XUserNameLineEdit *UserNameWidget;
     QSpacerItem *horizontalSpacer_3;
     QHBoxLayout *horizontalLayout_3;
     QSpacerItem *horizontalSpacer_4;
-    XPasswordLineEdit *widget_4;
+    XPasswordLineEdit *PasswordWidget;
     QSpacerItem *horizontalSpacer_5;
     QHBoxLayout *horizontalLayout_4;
     QSpacerItem *horizontalSpacer_6;
-    XLoginButton *widget;
+    XLoginButton *LoginButtonWdiget;
     QSpacerItem *horizontalSpacer_7;
     QSpacerItem *verticalSpacer_4;
 
@@ -119,7 +119,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout);
 
-        verticalSpacer = new QSpacerItem(20, 320, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer = new QSpacerItem(20, 180, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
 
@@ -132,8 +132,8 @@ public:
 
         Name = new QLabel(illidanQTClass);
         Name->setObjectName(QStringLiteral("Name"));
-        Name->setMinimumSize(QSize(235, 70));
-        Name->setMaximumSize(QSize(235, 70));
+        Name->setMinimumSize(QSize(470, 140));
+        Name->setMaximumSize(QSize(470, 140));
         Name->setAutoFillBackground(true);
         Name->setScaledContents(true);
         Name->setAlignment(Qt::AlignCenter);
@@ -158,10 +158,10 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        widget_3 = new XUserNameLineEdit(illidanQTClass);
-        widget_3->setObjectName(QStringLiteral("widget_3"));
+        UserNameWidget = new XUserNameLineEdit(illidanQTClass);
+        UserNameWidget->setObjectName(QStringLiteral("UserNameWidget"));
 
-        horizontalLayout_2->addWidget(widget_3);
+        horizontalLayout_2->addWidget(UserNameWidget);
 
         horizontalSpacer_3 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -177,10 +177,10 @@ public:
 
         horizontalLayout_3->addItem(horizontalSpacer_4);
 
-        widget_4 = new XPasswordLineEdit(illidanQTClass);
-        widget_4->setObjectName(QStringLiteral("widget_4"));
+        PasswordWidget = new XPasswordLineEdit(illidanQTClass);
+        PasswordWidget->setObjectName(QStringLiteral("PasswordWidget"));
 
-        horizontalLayout_3->addWidget(widget_4);
+        horizontalLayout_3->addWidget(PasswordWidget);
 
         horizontalSpacer_5 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -196,10 +196,10 @@ public:
 
         horizontalLayout_4->addItem(horizontalSpacer_6);
 
-        widget = new XLoginButton(illidanQTClass);
-        widget->setObjectName(QStringLiteral("widget"));
+        LoginButtonWdiget = new XLoginButton(illidanQTClass);
+        LoginButtonWdiget->setObjectName(QStringLiteral("LoginButtonWdiget"));
 
-        horizontalLayout_4->addWidget(widget);
+        horizontalLayout_4->addWidget(LoginButtonWdiget);
 
         horizontalSpacer_7 = new QSpacerItem(100, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -208,7 +208,7 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_4);
 
-        verticalSpacer_4 = new QSpacerItem(20, 220, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        verticalSpacer_4 = new QSpacerItem(20, 180, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer_4);
 

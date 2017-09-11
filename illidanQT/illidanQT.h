@@ -29,6 +29,7 @@ private slots:
 	void OnActivated(QSystemTrayIcon::ActivationReason reason);
 	void OnMin();
 	void OnExit();
+	void OnLogin();
 
 private:
 	Ui::illidanQTClass ui;

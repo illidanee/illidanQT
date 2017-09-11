@@ -106,7 +106,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>320</height>
+       <height>180</height>
       </size>
      </property>
     </spacer>
@@ -130,14 +130,14 @@
       <widget class="QLabel" name="Name">
        <property name="minimumSize">
         <size>
-         <width>235</width>
-         <height>70</height>
+         <width>470</width>
+         <height>140</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>235</width>
-         <height>70</height>
+         <width>470</width>
+         <height>140</height>
         </size>
        </property>
        <property name="autoFillBackground">
@@ -201,7 +201,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="XUserNameLineEdit" name="widget_3" native="true"/>
+      <widget class="XUserNameLineEdit" name="UserNameWidget" native="true"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_3">
@@ -237,7 +237,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="XPasswordLineEdit" name="widget_4" native="true"/>
+      <widget class="XPasswordLineEdit" name="PasswordWidget" native="true"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_5">
@@ -273,7 +273,7 @@
       </spacer>
      </item>
      <item>
-      <widget class="XLoginButton" name="widget" native="true"/>
+      <widget class="XLoginButton" name="LoginButtonWdiget" native="true"/>
      </item>
      <item>
       <spacer name="horizontalSpacer_7">
@@ -298,7 +298,7 @@
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>220</height>
+       <height>180</height>
       </size>
      </property>
     </spacer>

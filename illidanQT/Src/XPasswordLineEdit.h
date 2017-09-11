@@ -11,6 +11,12 @@ public:
 	XPasswordLineEdit(QWidget *parent = Q_NULLPTR);
 	~XPasswordLineEdit();
 
+signals:
+	void returnPressed();
+
+private slots:
+	void OnReturnPressed();
+
 private:
 	Ui::XPasswordLineEdit ui;
 };
