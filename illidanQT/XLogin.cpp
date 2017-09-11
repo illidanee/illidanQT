@@ -1,9 +1,9 @@
-#include "illidanQT.h"
+#include "XLogin.h"
 
 
 
-illidanQT::illidanQT(QWidget *parent)
-	: QWidget(parent)
+XLogin::XLogin(QWidget *parent)
+	: QDialog(parent)
 {
 	ui.setupUi(this);
 
@@ -45,18 +45,18 @@ illidanQT::illidanQT(QWidget *parent)
 	connect(ui.LoginButtonWdiget, SIGNAL(released()), this, SLOT(OnLogin()));
 }
 
-void illidanQT::closeEvent(QCloseEvent *event)
+void XLogin::closeEvent(QCloseEvent *event)
 {
 	hide();
 	event->ignore();
 }
 
-void illidanQT::paintEvent(QPaintEvent *event)
+void XLogin::paintEvent(QPaintEvent *event)
 {
 	QWidget::paintEvent(event);
 }
 
-void illidanQT::mousePressEvent(QMouseEvent *event)
+void XLogin::mousePressEvent(QMouseEvent *event)
 {
 	QWidget::mousePressEvent(event);
 
@@ -69,7 +69,7 @@ void illidanQT::mousePressEvent(QMouseEvent *event)
 	}
 }
 
-void illidanQT::mouseReleaseEvent(QMouseEvent *event)
+void XLogin::mouseReleaseEvent(QMouseEvent *event)
 {
 	QWidget::mouseReleaseEvent(event);
 
@@ -80,7 +80,7 @@ void illidanQT::mouseReleaseEvent(QMouseEvent *event)
 	}
 }
 
-void illidanQT::mouseMoveEvent(QMouseEvent *event)
+void XLogin::mouseMoveEvent(QMouseEvent *event)
 {
 	QWidget::mouseMoveEvent(event);
 
@@ -92,12 +92,12 @@ void illidanQT::mouseMoveEvent(QMouseEvent *event)
 	}
 }
 
-void illidanQT::OnExit()
+void XLogin::OnExit()
 {
 	QApplication::exit();
 }
 
-void illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
+void XLogin::OnActivated(QSystemTrayIcon::ActivationReason reason)
 {
 	if (reason == QSystemTrayIcon::DoubleClick)
 	{
@@ -105,12 +105,13 @@ void illidanQT::OnActivated(QSystemTrayIcon::ActivationReason reason)
 	}
 }
 
-void illidanQT::OnMin()
+void XLogin::OnMin()
 {
 	hide();
 }
 
-void illidanQT::OnLogin()
+void XLogin::OnLogin()
 {
+	accept();
 	qDebug() << "OnLogin......";
 }

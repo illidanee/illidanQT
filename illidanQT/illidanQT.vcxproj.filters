@@ -49,15 +49,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="illidanQT.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_illidanQT.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_illidanQT.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
     <ClCompile Include="GeneratedFiles\qrc_illidanQT.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
@@ -88,11 +79,26 @@
     <ClCompile Include="Src\XUserNameLineEdit.cpp">
       <Filter>Source Files\Login</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_XMainWindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_XMainWindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\XMainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XLogin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_XLogin.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_XLogin.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="illidanQT.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="illidanQT.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
@@ -117,6 +123,15 @@
     <CustomBuild Include="Src\XUserNameLineEdit.h">
       <Filter>Header Files\Login</Filter>
     </CustomBuild>
+    <CustomBuild Include="Src\XMainWindow.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Src\XMainWindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="XLogin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_illidanQT.h">
@@ -129,6 +144,9 @@
       <Filter>Generated Files</Filter>
     </ClInclude>
     <ClInclude Include="GeneratedFiles\ui_XLoginButton.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_XMainWindow.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

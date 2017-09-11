@@ -1,4 +1,5 @@
-#include "illidanQT.h"
+#include "XLogin.h"
+#include "XMainWindow.h"
 #include <QtWidgets/QApplication>
 
 #include <QFile>
@@ -13,7 +14,14 @@ int main(int argc, char *argv[])
 	QString typle = styleSheet.readAll();
 	a.setStyleSheet(typle);
 
-	illidanQT w;
-	w.show();
-	return a.exec();
+	XMainWindow xMainWindow;
+	XLogin xLogin;
+
+	if (xLogin.exec() == QDialog::Accepted)
+	{
+		xMainWindow.show();
+		return a.exec();
+	}
+	
+	return 0;
 }

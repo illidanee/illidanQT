@@ -1,6 +1,6 @@
 #pragma once
 
-#include <QtWidgets/QWidget>
+#include <QtWidgets/QDialog>
 #include "ui_illidanQT.h"
 
 #include <QtGui>
@@ -10,12 +10,12 @@
 
 
 
-class illidanQT : public QWidget
+class XLogin : public QDialog
 {
 	Q_OBJECT
 
 public:
-	illidanQT(QWidget *parent = Q_NULLPTR);
+	XLogin(QWidget *parent = Q_NULLPTR);
 
 private:
 	virtual void closeEvent(QCloseEvent *event);

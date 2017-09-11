@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'illidanQT.h'
+** Meta object code from reading C++ file 'XLogin.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.6.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../illidanQT.h"
+#include "../../XLogin.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'illidanQT.h' doesn't include <QObject>."
+#error "The header file 'XLogin.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.6.2. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,34 +18,34 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_illidanQT_t {
+struct qt_meta_stringdata_XLogin_t {
     QByteArrayData data[8];
-    char stringdata0[85];
+    char stringdata0[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_illidanQT_t, stringdata0) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_XLogin_t, stringdata0) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_illidanQT_t qt_meta_stringdata_illidanQT = {
+static const qt_meta_stringdata_XLogin_t qt_meta_stringdata_XLogin = {
     {
-QT_MOC_LITERAL(0, 0, 9), // "illidanQT"
-QT_MOC_LITERAL(1, 10, 11), // "OnActivated"
-QT_MOC_LITERAL(2, 22, 0), // ""
-QT_MOC_LITERAL(3, 23, 33), // "QSystemTrayIcon::ActivationRe..."
-QT_MOC_LITERAL(4, 57, 6), // "reason"
-QT_MOC_LITERAL(5, 64, 5), // "OnMin"
-QT_MOC_LITERAL(6, 70, 6), // "OnExit"
-QT_MOC_LITERAL(7, 77, 7) // "OnLogin"
+QT_MOC_LITERAL(0, 0, 6), // "XLogin"
+QT_MOC_LITERAL(1, 7, 11), // "OnActivated"
+QT_MOC_LITERAL(2, 19, 0), // ""
+QT_MOC_LITERAL(3, 20, 33), // "QSystemTrayIcon::ActivationRe..."
+QT_MOC_LITERAL(4, 54, 6), // "reason"
+QT_MOC_LITERAL(5, 61, 5), // "OnMin"
+QT_MOC_LITERAL(6, 67, 6), // "OnExit"
+QT_MOC_LITERAL(7, 74, 7) // "OnLogin"
 
     },
-    "illidanQT\0OnActivated\0\0"
+    "XLogin\0OnActivated\0\0"
     "QSystemTrayIcon::ActivationReason\0"
     "reason\0OnMin\0OnExit\0OnLogin"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_illidanQT[] = {
+static const uint qt_meta_data_XLogin[] = {
 
  // content:
        7,       // revision
@@ -73,10 +73,10 @@ static const uint qt_meta_data_illidanQT[] = {
        0        // eod
 };
 
-void illidanQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void XLogin::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        illidanQT *_t = static_cast<illidanQT *>(_o);
+        XLogin *_t = static_cast<XLogin *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->OnActivated((*reinterpret_cast< QSystemTrayIcon::ActivationReason(*)>(_a[1]))); break;
@@ -88,28 +88,28 @@ void illidanQT::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
     }
 }
 
-const QMetaObject illidanQT::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_illidanQT.data,
-      qt_meta_data_illidanQT,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject XLogin::staticMetaObject = {
+    { &QDialog::staticMetaObject, qt_meta_stringdata_XLogin.data,
+      qt_meta_data_XLogin,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *illidanQT::metaObject() const
+const QMetaObject *XLogin::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *illidanQT::qt_metacast(const char *_clname)
+void *XLogin::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_illidanQT.stringdata0))
-        return static_cast<void*>(const_cast< illidanQT*>(this));
-    return QWidget::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_XLogin.stringdata0))
+        return static_cast<void*>(const_cast< XLogin*>(this));
+    return QDialog::qt_metacast(_clname);
 }
 
-int illidanQT::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int XLogin::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QWidget::qt_metacall(_c, _id, _a);
+    _id = QDialog::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
