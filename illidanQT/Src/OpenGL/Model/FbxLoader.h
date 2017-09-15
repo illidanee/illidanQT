@@ -21,7 +21,7 @@
 
 #include "VertexInfo.h"
 
-
+#include "Shader.h"
 
 class XFbxLoader
 {
@@ -30,7 +30,9 @@ public:
 	~XFbxLoader();
 
 	void Init();
+	void Destroy();
 	int LoadFbxFile(const char* pFbxFile);
+	void Render(int width, int height);
 
 	int GetTextureName(const char* pModelFile, const char* pFileName, char* pBuff);
 
@@ -46,6 +48,7 @@ private:
 	
 
 private:
+	std::string m_Name;
 	FbxManager* m_Manager;
 	FbxImporter* m_Importer;
 
@@ -53,14 +56,7 @@ public:
 	int m_PVertexSize;
 	XVertexInfo* m_pVertexInfo;
 
-	struct Mat
-	{
-		int type;
-		char texture[256];
-	};
-	std::vector<Mat> m_vAllMats;
-	std::unordered_map<int, int> m_uMatsIndex;
-	std::vector<std::vector<int>> m_vIndices;
+	std::vector<XShader*> m_vShaders;
 };
 
 

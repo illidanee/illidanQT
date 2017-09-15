@@ -20,8 +20,15 @@ void XFbxLoader::Init()
 	m_Importer = FbxImporter::Create(m_Manager, "FbxImporter");
 }
 
+void XFbxLoader::Destroy()
+{
+	m_Manager->Destroy();
+}
+
 int XFbxLoader::LoadFbxFile(const char* pFbxFile)
 {
+	m_Name = pFbxFile;
+
 	m_Importer->Initialize(pFbxFile, -1, m_Manager->GetIOSettings());
 	FbxScene* pScene = FbxScene::Create(m_Manager, pFbxFile);
 	bool res = m_Importer->Import(pScene);
@@ -32,8 +39,21 @@ int XFbxLoader::LoadFbxFile(const char* pFbxFile)
 	FbxNode* pRootNode = pScene->GetRootNode();
 	ProcessNode(pRootNode);
 
+	for (auto shader : m_vShaders)
+	{
+		shader->Link();
+	}
+
 	pScene->Destroy();
 	return 0;
+}
+
+void XFbxLoader::Render(int width, int height)
+{
+	for (auto shader : m_vShaders)
+	{
+		shader->Render(width, height);
+	}
 }
 
 int XFbxLoader::ProcessMaterial(FbxNode* pNode)
@@ -43,56 +63,32 @@ int XFbxLoader::ProcessMaterial(FbxNode* pNode)
 	{
 		FbxSurfaceMaterial* pSurfaceMaterial = pNode->GetMaterial(i);
 
-		int type = 0;
-		if (pSurfaceMaterial->GetClassId() == FbxSurfaceLambert::ClassId)
-		{
-			type = 1;
-		}
-		else if (pSurfaceMaterial->GetClassId() == FbxSurfacePhong::ClassId)
-		{
-			type = 2;
-		}
-		else
-		{
-			return -1;
-		}
-
+		//diffuse
 		FbxProperty oProperty = pSurfaceMaterial->FindProperty(FbxLayerElement::sTextureChannelNames[0]);
 		if (oProperty.IsValid())
 		{
 			int nSrcCount = oProperty.GetSrcObjectCount<FbxTexture>();
 			if (nSrcCount < 1)
-				return -2;
+				return -1;
+
 			FbxTexture* oTexture = oProperty.GetSrcObject<FbxTexture>(0);
+			if (!oTexture)
+				return -2;
+			
+			XShader* shader = new XShader();
+			shader->Init("./Shader/Render.vs", "./Shader/Render.fs");
 
-			int index = -1;
-			int nAllMatsCount = m_vAllMats.size();
- 			for (int j = 0; j < nAllMatsCount; ++j)
-			{
-				if (m_vAllMats[j].type == type && strcmp(m_vAllMats[j].texture, oTexture->GetName()) == 0)
-				{
-					index = j;
-					break;
-				}
-			}
-
-			if (index == -1)
-			{
-				index = m_vAllMats.size();
-				Mat mat;
-				memset(&mat, 0, sizeof(Mat));
-				mat.type = type;
-				strcpy(mat.texture, oTexture->GetName());
-
-				//GetTextureName("./Resources/Model/tauren.fbx", oTexture->GetName(), mat.texture);
-				m_vAllMats.push_back(mat);
-			}
-
-			m_uMatsIndex.insert(std::pair<int, int>(i, index));
+			char path[256];
+			memset(path, 0, 256);
+			GetTextureName(m_Name.c_str(), oTexture->GetName(), path);
+			shader->AddDiffuseTexture(path);
+			m_vShaders.push_back(shader);
+		}
+		else
+		{
+			return -3;
 		}
 	}
-
-	m_vIndices.resize(m_vAllMats.size());
 
 	return 0;
 }
@@ -148,7 +144,7 @@ int XFbxLoader::ProcessMesh(FbxNode* pNode)
 			//½âÎöUVÊý¾Ý
 			FbxStringList oUVSetList;
 			pMesh->GetUVSetNames(oUVSetList);
-			if (oUVSetList.GetCount() > 1)
+			if (oUVSetList.GetCount() > 0)
 			{
 				FbxVector2 uv;
 				bool flag = true;
@@ -233,10 +229,12 @@ int XFbxLoader::ProcessMaterialIndex(FbxMesh* pMesh, int index)
 		case FbxLayerElement::eIndexToDirect:
 			{
 				int nMaterialIndex = pGeometryElementMaterial->GetIndexArray().GetAt(index);
-				int nMapIndex = m_uMatsIndex[nMaterialIndex];
-				m_vIndices[nMapIndex].push_back(index * 3 + 0);
-				m_vIndices[nMapIndex].push_back(index * 3 + 1);
-				m_vIndices[nMapIndex].push_back(index * 3 + 2);
+				if (nMaterialIndex < m_vShaders.size())
+				{
+					m_vShaders[nMaterialIndex]->AddVertex(m_pVertexInfo[index * 3 + 0]);
+					m_vShaders[nMaterialIndex]->AddVertex(m_pVertexInfo[index * 3 + 1]);
+					m_vShaders[nMaterialIndex]->AddVertex(m_pVertexInfo[index * 3 + 2]);
+				}
 			}
 		}
 		break;

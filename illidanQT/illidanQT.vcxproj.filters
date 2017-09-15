@@ -148,6 +148,9 @@
     <ClCompile Include="Src\OpenGL\Model\VertexInfo.cpp">
       <Filter>Source Files\OpenGL\Model</Filter>
     </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\Shader.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="illidanQT.ui">
@@ -225,6 +228,9 @@
       <Filter>Header Files\OpenGL\Model</Filter>
     </ClInclude>
     <ClInclude Include="Src\OpenGL\Model\VertexInfo.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\Shader.h">
       <Filter>Header Files\OpenGL\Model</Filter>
     </ClInclude>
   </ItemGroup>

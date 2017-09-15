@@ -4,6 +4,8 @@
 #include <QOpenGLFunctions_3_3_Core>
 
 #include "../Comm/Comm.h"
+#include "FbxLoader.h"
+
 
 class XManager;
 class XVertexInfo;
@@ -18,12 +20,13 @@ public:
 	void Render(XManager& xManager, int width, int height);
 
 private:
-	int m_PVertexSize;
-	XVertexInfo* m_pVertexInfo;
+	//int m_PVertexSize;
+	//XVertexInfo* m_pVertexInfo;
 
-	GLuint program;
-	GLuint vbo;
-	GLuint vao;
+	//GLuint program;
+	//GLuint vbo;
+	//GLuint vao;
+	XFbxLoader* fbx;
 };
 
 #endif

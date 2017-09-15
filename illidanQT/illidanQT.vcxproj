@@ -117,6 +117,7 @@
     <ClCompile Include="Src\OpenGL\Model\Camera.cpp" />
     <ClCompile Include="Src\OpenGL\Model\FbxLoader.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Render.cpp" />
+    <ClCompile Include="Src\OpenGL\Model\Shader.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Skybox.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Tools.cpp" />
     <ClCompile Include="Src\OpenGL\Model\VertexInfo.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Src\OpenGL\Model\Camera.h" />
     <ClInclude Include="Src\OpenGL\Model\FbxLoader.h" />
     <ClInclude Include="Src\OpenGL\Model\Render.h" />
+    <ClInclude Include="Src\OpenGL\Model\Shader.h" />
     <ClInclude Include="Src\OpenGL\Model\Skybox.h" />
     <ClInclude Include="Src\OpenGL\Model\Tools.h" />
     <ClInclude Include="Src\OpenGL\Model\VertexInfo.h" />
