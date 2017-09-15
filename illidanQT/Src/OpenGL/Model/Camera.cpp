@@ -19,7 +19,7 @@ void XCamera::Init()
 	m_Near = 0.1f;
 	m_Far = 1000.0f;
 
-	m_Pos = { 0.0f, 0.0f, 0.0f };
+	m_Pos = { 0.0f, 0.0f, 10.0f };
 	m_Front = { 0.0f, 0.0f, -1.0f };
 	m_Up = { 0.0f, 1.0f, 0.0f };
 

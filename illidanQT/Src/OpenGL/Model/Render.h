@@ -6,6 +6,7 @@
 #include "../Comm/Comm.h"
 
 class XManager;
+class XVertexInfo;
 class XRender : public QOpenGLFunctions_3_3_Core
 {
 public:
@@ -17,14 +18,12 @@ public:
 	void Render(XManager& xManager, int width, int height);
 
 private:
-	unsigned* index1;
-	int size1;
+	int m_PVertexSize;
+	XVertexInfo* m_pVertexInfo;
+
 	GLuint program;
 	GLuint vbo;
-	GLuint vao1;
-	GLuint ebo1;
-	GLuint texture1;
-
+	GLuint vao;
 };
 
 #endif
