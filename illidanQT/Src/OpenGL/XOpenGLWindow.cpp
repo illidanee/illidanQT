@@ -55,7 +55,7 @@ void XOpenGLWindow::paintGL()
 
 //Render
 	XManager::GetRef().m_Render->Render(XManager::GetRef(), m_Width, m_Height);
-	XManager::GetRef().m_Skybox->Render(XManager::GetRef(), m_Width, m_Height);
+	//XManager::GetRef().m_Skybox->Render(XManager::GetRef(), m_Width, m_Height);
 }
 
 void XOpenGLWindow::mousePressEvent(QMouseEvent *event)

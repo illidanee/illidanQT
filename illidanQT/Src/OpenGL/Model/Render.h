@@ -17,9 +17,14 @@ public:
 	void Render(XManager& xManager, int width, int height);
 
 private:
+	unsigned* index1;
+	int size1;
 	GLuint program;
-	GLuint vao;
 	GLuint vbo;
+	GLuint vao1;
+	GLuint ebo1;
+	GLuint texture1;
+
 };
 
 #endif

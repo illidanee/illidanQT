@@ -39,6 +39,10 @@ void XManager::Init()
 	m_Skybox = new XSkybox();
 	m_Skybox->Init();
 
+	m_FbxLoader = new XFbxLoader();
+	m_FbxLoader->Init();
+	m_FbxLoader->LoadFbxFile("./Resources/Model/tauren.fbx");
+
 	m_Render = new XRender();
 	m_Render->Init();
 }

@@ -142,6 +142,12 @@
     <ClCompile Include="Src\OpenGL\Manager.cpp">
       <Filter>Source Files\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\FbxLoader.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\OpenGL\Model\VertexInfo.cpp">
+      <Filter>Source Files\OpenGL\Model</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="illidanQT.ui">
@@ -214,6 +220,12 @@
     </ClInclude>
     <ClInclude Include="Src\OpenGL\Manager.h">
       <Filter>Header Files\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\FbxLoader.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\OpenGL\Model\VertexInfo.h">
+      <Filter>Header Files\OpenGL\Model</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -22,13 +22,14 @@ int main(int argc, char *argv[])
 	XOpenGLWindow xOpenGLWindow;
 	XLogin xLogin;
 
-	if (xLogin.exec() == QDialog::Accepted)
-	{
+	//int res = xLogin.exec();
+	//if (res == QDialog::Accepted)
+	//{
 		//xOpenGLWindow.showFullScreen();
 		xOpenGLWindow.setFixedSize(1280, 800);
 		xOpenGLWindow.show();
 		return a.exec();
-	}
+	//}
 	
 	return 0;
 }

@@ -30,8 +30,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
-    <IncludePath>../Soil/Include;$(IncludePath)</IncludePath>
-    <LibraryPath>../Soil/Lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>../Fbx/Include;../Soil/Include;$(IncludePath)</IncludePath>
+    <LibraryPath>../Fbx/Lib;../Soil/Lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
@@ -50,7 +50,7 @@
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
       <AdditionalLibraryDirectories>$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;opengl32.lib;SOIL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>qtmaind.lib;Qt5Cored.lib;Qt5Guid.lib;Qt5Widgetsd.lib;opengl32.lib;SOIL.lib;libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -115,9 +115,11 @@
     <ClCompile Include="Src\OpenGL\Comm\Comm.cpp" />
     <ClCompile Include="Src\OpenGL\Manager.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Camera.cpp" />
+    <ClCompile Include="Src\OpenGL\Model\FbxLoader.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Render.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Skybox.cpp" />
     <ClCompile Include="Src\OpenGL\Model\Tools.cpp" />
+    <ClCompile Include="Src\OpenGL\Model\VertexInfo.cpp" />
     <ClCompile Include="Src\OpenGL\XOpenGLWindow.cpp" />
     <ClCompile Include="XLogin.cpp" />
     <ClCompile Include="main.cpp" />
@@ -159,9 +161,11 @@
     <ClInclude Include="Src\OpenGL\Comm\Comm.h" />
     <ClInclude Include="Src\OpenGL\Manager.h" />
     <ClInclude Include="Src\OpenGL\Model\Camera.h" />
+    <ClInclude Include="Src\OpenGL\Model\FbxLoader.h" />
     <ClInclude Include="Src\OpenGL\Model\Render.h" />
     <ClInclude Include="Src\OpenGL\Model\Skybox.h" />
     <ClInclude Include="Src\OpenGL\Model\Tools.h" />
+    <ClInclude Include="Src\OpenGL\Model\VertexInfo.h" />
     <CustomBuild Include="Src\OpenGL\XOpenGLWindow.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Moc%27ing XOpenGLWindow.h...</Message>

@@ -6,6 +6,7 @@
 #include "./Model/Camera.h"
 #include "./Model/Skybox.h"
 #include "./Model/Render.h"
+#include "./Model/FbxLoader.h"
 
 class XManager
 {
@@ -25,6 +26,7 @@ public:
 	XCamera* m_Camera;
 	XSkybox* m_Skybox;
 	XRender* m_Render;
+	XFbxLoader* m_FbxLoader;
 };
 
 #endif
