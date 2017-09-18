@@ -85,9 +85,9 @@ void XShader::Render(int width, int height)
 	glUseProgram(m_nProgram);
 
 	QMatrix4x4 model;
-	model.translate(0.0f, -2.5f, 0.0f);
-	model.rotate(-90.0f, 0.0f, 1.0f, 0.0f);
-	model.scale(0.05f);
+	model.translate(0.0f, 0.0f, 0.0f);
+	model.rotate(-180.0f, 0.0f, 1.0f, 0.0f);
+	model.scale(0.8f);
 	GLint uModelLoc = glGetUniformLocation(m_nProgram, "uModel");
 	glUniformMatrix4fv(uModelLoc, 1, GL_FALSE, model.data());
 

@@ -78,6 +78,8 @@ int XFbxLoader::ProcessMaterial(FbxNode* pNode)
 			XShader* shader = new XShader();
 			shader->Init("./Shader/Render.vs", "./Shader/Render.fs");
 
+			const char* pData = oTexture->GetName();
+
 			char path[256];
 			memset(path, 0, 256);
 			GetTextureName(m_Name.c_str(), oTexture->GetName(), path);
@@ -151,7 +153,7 @@ int XFbxLoader::ProcessMesh(FbxNode* pNode)
 				if (pMesh->GetPolygonVertexUV(i, j, oUVSetList[0], uv, flag))
 				{
 					m_pVertexInfo[i * POLYGON_POINT_NUM + j].uv[0] = uv.mData[0];
-					m_pVertexInfo[i * POLYGON_POINT_NUM + j].uv[1] = uv.mData[1];
+					m_pVertexInfo[i * POLYGON_POINT_NUM + j].uv[1] = 1 - uv.mData[1];
 				}
 			}
 		}

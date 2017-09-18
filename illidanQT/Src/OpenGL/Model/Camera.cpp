@@ -118,12 +118,12 @@ void XCamera::OnUpdate()
 
 	if (m_State[Qt::Key_W])
 	{
-		m_Pos += offset * m_Front;
+		m_Pos += offset * m_Front.normalized();
 	}
 
 	if (m_State[Qt::Key_S])
 	{
-		m_Pos -= offset * m_Front;
+		m_Pos -= offset * m_Front.normalized();
 	}
 
 	if (m_State[Qt::Key_A])
