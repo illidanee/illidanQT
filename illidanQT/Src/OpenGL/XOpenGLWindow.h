@@ -5,6 +5,8 @@
 #include <QMouseEvent>
 #include <QWheelEvent>
 #include <QKeyEvent>
+#include <QMimeData>
+#include <QDebug>
 
 #include "Manager.h"
 
@@ -17,6 +19,7 @@ public:
 	XOpenGLWindow(QWidget *parent = 0);
 	~XOpenGLWindow();
 
+protected:
 	//»æÖÆ
 	virtual void initializeGL();
 	virtual void resizeGL(int width, int height);
@@ -35,6 +38,10 @@ public:
 	virtual void keyPressEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 	virtual void keyReleaseEvent(QKeyEvent *event) Q_DECL_OVERRIDE;
 	
+	//ÍÏ×§
+	virtual void dragEnterEvent(QDragEnterEvent *event);
+	virtual void dropEvent(QDropEvent *event);
+
 private:
 	bool m_bFullScreen;
 	int m_Width;

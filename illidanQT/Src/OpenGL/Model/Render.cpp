@@ -19,6 +19,8 @@ void XRender::Init()
 	//Init OpenGL Functions
 	initializeOpenGLFunctions();
 
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
 	//Init value
 	glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
 	glEnable(GL_DEPTH_TEST);
@@ -26,6 +28,12 @@ void XRender::Init()
 
 	fbx = new XFbxLoader();
 	fbx->Init();
+	//fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
+}
+
+void XRender::ResetFile(const char* pFileName)
+{
+	fbx->Reset();
 	fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
 }
 
@@ -39,5 +47,6 @@ void XRender::Render(XManager& xManager, int width, int height)
 	glViewport(0, 0, width, height);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	fbx->Render(width, height);
+	if (fbx)
+		fbx->Render(width, height);
 }

@@ -31,6 +31,7 @@ public:
 
 	void Init();
 	void Destroy();
+	void Reset();
 	int LoadFbxFile(const char* pFbxFile);
 	void Render(int width, int height);
 

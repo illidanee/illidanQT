@@ -1,10 +1,10 @@
-#include "XOpenGLWindow.h"
+ï»¿#include "XOpenGLWindow.h"
 
 
 XOpenGLWindow::XOpenGLWindow(QWidget *parent)
 	:QOpenGLWidget(parent)
 {
-	//È«ÆÁ
+	//å…¨å±
 	m_bFullScreen = true;
 	m_Width = 0;
 	m_Height = 0;
@@ -14,7 +14,7 @@ XOpenGLWindow::XOpenGLWindow(QWidget *parent)
 	m_LastMouseX = 0;
 	m_LastMouseY = 0;
 
-	//ÉèÖÃOpenGLµÄ°æ±¾ÐÅÏ¢
+	//è®¾ç½®OpenGLçš„ç‰ˆæœ¬ä¿¡æ¯
 	QSurfaceFormat format;
 	format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
 	format.setRenderableType(QSurfaceFormat::OpenGL);
@@ -30,10 +30,12 @@ XOpenGLWindow::~XOpenGLWindow()
 
 void XOpenGLWindow::initializeGL()
 {
+	setAcceptDrops(true);
+
 	//Init
 	XManager::GetRef().Init();
 
-	//Æô¶¯¶¨Ê±Æ÷
+	//å¯åŠ¨å®šæ—¶å™¨
 	m_TimerID = startTimer(30);
 }
 
@@ -49,7 +51,7 @@ void XOpenGLWindow::resizeGL(int width, int height)
 void XOpenGLWindow::paintGL()
 {
 //Logic
-	//¸üÐÂ
+	//æ›´æ–°
 	XManager::GetRef().m_Camera->OnUpdate();
 	
 
@@ -139,6 +141,30 @@ void XOpenGLWindow::keyReleaseEvent(QKeyEvent *event)
 		QWidget::keyPressEvent(event);
 		break;
 	}
+}
+
+void XOpenGLWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+	if (event->mimeData()->hasFormat("text/uri-list"));
+	{
+		event->acceptProposedAction();
+	}
+
+}
+
+void XOpenGLWindow::dropEvent(QDropEvent *event)
+{
+	QList<QUrl> urls = event->mimeData()->urls();
+	if (urls.isEmpty())
+		return;
+
+	QString fileName = urls.first().toLocalFile();
+
+	if (fileName.isEmpty())
+		return;
+
+	qDebug() << fileName;
+	XManager::GetRef().m_Render->ResetFile("./Resources/Model/skin_man.FBX");
 }
 
 void XOpenGLWindow::timerEvent(QTimerEvent * event)

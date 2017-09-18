@@ -16,6 +16,7 @@ public:
 	~XRender();
 
 	void Init();
+	void ResetFile(const char* pFileName);
 	void Resize(int width, int height);
 	void Render(XManager& xManager, int width, int height);
 

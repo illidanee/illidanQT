@@ -25,6 +25,25 @@ void XFbxLoader::Destroy()
 	m_Manager->Destroy();
 }
 
+void XFbxLoader::Reset()
+{
+	m_Name = "";
+
+	m_PVertexSize = 0;
+	if (m_pVertexInfo)
+	{
+		delete[] m_pVertexInfo;
+		m_pVertexInfo = 0;
+	}
+
+	for (auto iter : m_vShaders)
+	{
+		iter->Destroy();
+		delete iter;
+	}
+	m_vShaders.clear();
+}
+
 int XFbxLoader::LoadFbxFile(const char* pFbxFile)
 {
 	m_Name = pFbxFile;

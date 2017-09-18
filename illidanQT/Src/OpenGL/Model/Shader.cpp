@@ -25,6 +25,15 @@ void XShader::Init(const char* pVsShader, const char* pFsShader)
 	m_nProgram = XManager::GetRef().m_Tools->CompileProgram(pVsShader, pFsShader);
 }
 
+void XShader::Destroy()
+{
+	m_vAllVertices.clear();
+	glDeleteTextures(1, &m_nDiffuseTexture);
+	glDeleteBuffers(1, &m_nVBO);
+	glDeleteVertexArrays(1, &m_nVAO);
+	glDeleteProgram(m_nProgram);
+}
+
 void XShader::AddVertex(XVertexInfo vertex)
 {
 	m_vAllVertices.push_back(vertex);

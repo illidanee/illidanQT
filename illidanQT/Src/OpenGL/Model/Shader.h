@@ -24,6 +24,7 @@ public:
 	~XShader();
 
 	void Init(const char* pVsShader, const char* pFsShader);
+	void Destroy();
 	void AddVertex(XVertexInfo vertex);
 	void AddDiffuseTexture(const char* pDiffuseTexture);
 	void Link();
