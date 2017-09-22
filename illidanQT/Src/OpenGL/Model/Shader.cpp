@@ -118,17 +118,16 @@ void XShader::Render(int width, int height)
 	glUniform1i(texLoc, 0);
 
 	glBindVertexArray(m_nVAO);
-
-	GLenum err = glGetError();
-	if (err != 0)
-	{
-		std::cout << "++++++++++++++++++++++++++++++++" << err << std::endl;
-	}
-
 	glDrawArrays(GL_TRIANGLES, 0, m_vAllVertices.size());
 	glBindVertexArray(0);
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 
 	glUseProgram(0);
+
+	GLenum err = glGetError();
+	if (err != 0)
+	{
+		std::cout << "++++++++++++++++++++++++++++++++" << err << std::endl;
+	}
 }

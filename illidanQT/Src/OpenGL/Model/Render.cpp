@@ -28,15 +28,13 @@ void XRender::Init()
 
 	fbx = new XFbxLoader();
 	fbx->Init();
-	fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
-	fbx->Reset();
-	fbx->LoadFbxFile("./Resources/Model/tauren.fbx");
+	fbx->LoadFbxFile("./Resources/Model/skin_man.fbx");
 }
 
 void XRender::ResetFile(const char* pFileName)
 {
 	fbx->Reset();
-	fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
+	fbx->LoadFbxFile("./Resources/Model/tauren.fbx");
 }
 
 void XRender::Resize(int width, int height)
