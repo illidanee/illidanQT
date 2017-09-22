@@ -112,11 +112,23 @@ void XShader::Render(int width, int height)
 	GLint uProjectionLoc = glGetUniformLocation(m_nProgram, "uProjection");
 	glUniformMatrix4fv(uProjectionLoc, 1, GL_FALSE, projection.data());
 
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_nDiffuseTexture);
+	GLuint texLoc = glGetUniformLocation(m_nProgram, "tex");
+	glUniform1i(texLoc, 0);
 
 	glBindVertexArray(m_nVAO);
+
+	GLenum err = glGetError();
+	if (err != 0)
+	{
+		std::cout << "++++++++++++++++++++++++++++++++" << err << std::endl;
+	}
+
 	glDrawArrays(GL_TRIANGLES, 0, m_vAllVertices.size());
 	glBindVertexArray(0);
+
+	glBindTexture(GL_TEXTURE_2D, 0);
 
 	glUseProgram(0);
 }

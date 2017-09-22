@@ -19,7 +19,7 @@ void XRender::Init()
 	//Init OpenGL Functions
 	initializeOpenGLFunctions();
 
-	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 	//Init value
 	glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
@@ -28,7 +28,9 @@ void XRender::Init()
 
 	fbx = new XFbxLoader();
 	fbx->Init();
-	//fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
+	fbx->LoadFbxFile("./Resources/Model/skin_man.FBX");
+	fbx->Reset();
+	fbx->LoadFbxFile("./Resources/Model/tauren.fbx");
 }
 
 void XRender::ResetFile(const char* pFileName)
