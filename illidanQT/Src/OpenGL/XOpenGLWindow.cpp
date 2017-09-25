@@ -13,14 +13,6 @@ XOpenGLWindow::XOpenGLWindow(QWidget *parent)
 
 	m_LastMouseX = 0;
 	m_LastMouseY = 0;
-
-	//设置OpenGL的版本信息
-	//QSurfaceFormat format;
-	//format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
-	//format.setRenderableType(QSurfaceFormat::OpenGL);
-	//format.setProfile(QSurfaceFormat::CoreProfile);
-	//format.setVersion(3, 3);
-	//setFormat(format);
 }
 
 XOpenGLWindow::~XOpenGLWindow()

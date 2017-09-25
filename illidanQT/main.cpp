@@ -19,6 +19,17 @@ int main(int argc, char *argv[])
 	QString typle = styleSheet.readAll();
 	a.setStyleSheet(typle);
 
+	//设置OpenGL的版本信息
+	QSurfaceFormat format;
+	format.setSwapBehavior(QSurfaceFormat::DoubleBuffer);
+	format.setRenderableType(QSurfaceFormat::OpenGL);
+	format.setProfile(QSurfaceFormat::CoreProfile);
+	format.setVersion(3, 3);
+	format.setDepthBufferSize(24);
+	format.setStencilBufferSize(8);
+	format.setSamples(8);
+	QSurfaceFormat::setDefaultFormat(format);
+
 	XOpenGLWindow xOpenGLWindow;
 	XLogin xLogin;
 
