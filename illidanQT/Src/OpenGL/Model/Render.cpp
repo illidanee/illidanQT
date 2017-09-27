@@ -28,6 +28,8 @@ void XRender::Init()
 
 	fbx = new XFbxLoader();
 	fbx->Init();
+	fbx->LoadFbxFile("./Resources/Model/skin_man.fbx");	
+	fbx->Reset();
 	fbx->LoadFbxFile("./Resources/Model/skin_man.fbx");
 }
 

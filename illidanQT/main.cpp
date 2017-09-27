@@ -7,6 +7,8 @@
 
 int main(int argc, char *argv[])
 {
+	QApplication::setAttribute(Qt::AA_UseDesktopOpenGL);
+	QApplication::setAttribute(Qt::AA_UseSoftwareOpenGL);
 	QApplication a(argc, argv);
 
 	//当前目录
@@ -25,22 +27,21 @@ int main(int argc, char *argv[])
 	format.setRenderableType(QSurfaceFormat::OpenGL);
 	format.setProfile(QSurfaceFormat::CoreProfile);
 	format.setVersion(3, 3);
+	format.setRedBufferSize(8);
+	format.setGreenBufferSize(8);
+	format.setBlueBufferSize(8);
+	format.setAlphaBufferSize(8);
 	format.setDepthBufferSize(24);
 	format.setStencilBufferSize(8);
 	format.setSamples(8);
 	QSurfaceFormat::setDefaultFormat(format);
 
+	//打开窗口
 	XOpenGLWindow xOpenGLWindow;
-	XLogin xLogin;
+	xOpenGLWindow.setFormat(format);
+	xOpenGLWindow.setFixedSize(1280, 800);
+	xOpenGLWindow.show();
 
-	//int res = xLogin.exec();
-	//if (res == QDialog::Accepted)
-	//{
-		//xOpenGLWindow.showFullScreen();
-		xOpenGLWindow.setFixedSize(1280, 800);
-		xOpenGLWindow.show();
-		return a.exec();
-	//}
-	
-	return 0;
+	return a.exec();
+
 }
