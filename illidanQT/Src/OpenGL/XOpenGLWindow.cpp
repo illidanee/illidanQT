@@ -146,6 +146,8 @@ void XOpenGLWindow::dragEnterEvent(QDragEnterEvent *event)
 
 void XOpenGLWindow::dropEvent(QDropEvent *event)
 {
+	this->makeCurrent();
+
 	QList<QUrl> urls = event->mimeData()->urls();
 	if (urls.isEmpty())
 		return;
